@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Libération | Solution contre l'addiction</title>
+        <title>TAFSUT | Solution contre l'addiction</title>
         <meta name="description" content="Reprenez le contrôle de votre vie." />
       </Head>
       

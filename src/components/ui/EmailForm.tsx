@@ -27,14 +27,14 @@ export default function EmailForm() {
   };
 
   return (
-    <div className="w-full max-w-md px-2 md:px-0">
+    <div className="w-full max-w-md mx-auto px-2">
       <AnimatePresence mode="wait">
         {status === 'success' ? (
           <motion.div 
             key="success"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="flex flex-col items-center gap-6 p-8 md:p-10 bg-[#EAE6DA] text-[#2F3A4A] rounded-[2.5rem] md:rounded-[3rem] shadow-2xl"
+            className="flex flex-col items-center gap-6 p-8 md:p-10 bg-[#EAE6DA] text-[#2F3A4A] rounded-[2.5rem] shadow-2xl"
           >
             <motion.div 
               initial={{ rotate: -45, scale: 0 }}
@@ -42,36 +42,35 @@ export default function EmailForm() {
               transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
               className="bg-[#2F3A4A] p-4 rounded-full text-[#EAE6DA]"
             >
-              <CheckCircle size={40} />
+              <CheckCircle size={32} className="md:w-10 md:h-10" />
             </motion.div>
             <div className="text-center">
-              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter">Bienvenue chez Tafsut</h3>
-              <p className="opacity-70 mt-2 font-medium">Votre accès prioritaire est confirmé.</p>
+              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">Bienvenue chez Tafsut</h3>
+              <p className="text-sm opacity-70 mt-2 font-medium">Votre accès prioritaire est confirmé.</p>
             </div>
           </motion.div>
         ) : (
-          <motion.div key="form" exit={{ opacity: 0, scale: 0.95 }}>
-            
+          <motion.div key="form" exit={{ opacity: 0, scale: 0.95 }} className="w-full">
+           
 
-            <form onSubmit={handleSubmit} className="relative flex flex-col gap-3">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <input
                 type="email"
                 name="email"
                 required
                 placeholder="votre@email.com"
                 disabled={status === 'loading'}
-                className="w-full px-6 md:px-8 py-5 md:py-6 rounded-2xl md:rounded-3xl bg-[#59647A]/20 border-2 border-[#EAE6DA]/10 text-[#EAE6DA] placeholder:text-[#EAE6DA]/30 outline-none transition-all focus:border-[#EAE6DA]/50 backdrop-blur-md text-base md:text-lg"
+                className="w-full px-6 py-4 md:py-6 rounded-2xl md:rounded-3xl bg-[#59647A]/20 border-2 border-[#EAE6DA]/10 text-[#EAE6DA] placeholder:text-[#EAE6DA]/30 outline-none text-base md:text-lg focus:border-[#EAE6DA]/50 backdrop-blur-md"
               />
               <motion.button 
-                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={status === 'loading'}
-                className="w-full bg-[#EAE6DA] hover:bg-white text-[#2F3A4A] font-black py-5 md:py-6 rounded-2xl md:rounded-3xl shadow-xl flex items-center justify-center gap-3 transition-colors text-base md:text-lg"
+                className="w-full bg-[#EAE6DA] text-[#2F3A4A] font-black py-4 md:py-6 rounded-2xl md:rounded-3xl shadow-xl flex items-center justify-center gap-3 text-base md:text-lg"
               >
                 {status === 'loading' ? (
                   <Loader2 className="animate-spin" />
                 ) : (
-                  <>Rejoindre l'accès prioritaire <ArrowRight size={20} /></>
+                  <>Rejoindre l'accès prioritaire <ArrowRight size={18} /></>
                 )}
               </motion.button>
             </form>
@@ -81,12 +80,12 @@ export default function EmailForm() {
                 <AlertCircle size={14} /> Une erreur est survenue.
               </motion.div>
             )}
-            
-            <div className="mt-8 flex flex-col items-center gap-3">
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#EAE6DA]/5 rounded-xl border border-[#EAE6DA]/10">
+
+            <div className="mt-6 flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 px-3 py-1 bg-[#EAE6DA]/5 rounded-lg border border-[#EAE6DA]/10">
                  <Lock size={10} className="text-[#EAE6DA]/60" />
-                 <p className="text-[8px] md:text-[9px] text-[#EAE6DA]/60 uppercase tracking-[0.2em] font-bold">
-                   Anonymat Garanti • Zéro Trace
+                 <p className="text-[8px] md:text-[9px] text-[#EAE6DA]/60 uppercase tracking-[0.1em] font-bold">
+                   Anonymat Garanti • Chiffrement Militaire
                  </p>
               </div>
             </div>
