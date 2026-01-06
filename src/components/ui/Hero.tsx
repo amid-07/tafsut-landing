@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.8 }}
           className="text-sm md:text-2xl mb-10 md:mb-14 max-w-3xl mx-auto leading-relaxed font-light text-[#EAE6DA] px-4 md:px-2"
         >
-          <b>Tafsut</b> unit l'expertise des <b>Psychologues</b>, le soutien d'un <b>Coach IA</b> 
+          <b>Tafsut</b> unit l'expertise des <b>Psychologues</b>, le soutien d'un <b>Coach IA </b> 
           et l'analyse de votre <b>Journal</b> pour une libération sans jugement.
         </motion.p>
 
